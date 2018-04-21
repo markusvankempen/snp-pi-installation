@@ -9,6 +9,8 @@ nvm use 8.2.1
 cd ~
 git clone https://github.com/markusvankempen/playbulb.git
 cd playbulb
+npm install
+
 mkdir snp00
 cd snp00
 cp ~/snp-pi-installation/snp00/* .
@@ -65,12 +67,13 @@ sudo npm install pigpio --prefix /home/pi/playbulb/snp00/
 #keyboard
 #cat  /etc/default/keyboard
 
-echo "done - check with service are running maybe reboot"
+echo "### >>> done - check with service are running maybe reboot"
 sudo systemctl status gitupdatersnp.service
 sudo systemctl status playbulb.service
 echo "try to start manual like "
 echo "cd ~/playbulb/snp00"
 cd ~/playbulb/snp00
 echo "sudo node pipbiotv2.js"
-
+sudo node pipbiotv2.js
+format
 
