@@ -58,7 +58,7 @@ echo "cp 7segmentv3.js  to snp00/ 7segmentv3.js"
 sudo cp /home/pi/gitupdater/snpcode/7segmentv3.js /home/pi/playbulb/snp00/7segmentv3.js
 echo "cp candle-service.js /home/pi/playbulb/lib/"          
 sudo cp /home/pi/gitupdater/snpcode/candle-service.js /home/pi/playbulb/lib/
-sudo npm install pigpio --prefix /home/pi/playbulb/snp00/
+npm install pigpio --prefix /home/pi/playbulb/snp00/
 
 #time zone
 #rm /etc/localtime
@@ -75,5 +75,5 @@ echo "cd ~/playbulb/snp00"
 cd ~/playbulb/snp00
 echo "sudo node pipbiotv2.js"
 sudo node pipbiotv2.js
-format
+
 
