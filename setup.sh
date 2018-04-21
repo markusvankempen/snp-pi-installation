@@ -1,7 +1,7 @@
 # Install nvm node.js and npm
 # version20180423
 echo "SNP PI setup script"
-
+sudo apt-get update
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.9/install.sh | bash
 sudo apt-get install npm
 nvm install 8.2.1
@@ -13,6 +13,7 @@ mkdir snp00
 cd snp00
 cp ~/snp-pi-installation/snp00/* .
 npm install
+npm install socket.io
 #https://www.axllent.org/docs/view/nodejs-service-with-systemd/#user-comments
 
 sudo cp *.service /etc/systemd/system/
@@ -58,10 +59,18 @@ sudo cp /home/pi/gitupdater/snpcode/candle-service.js /home/pi/playbulb/lib/
 sudo npm install pigpio --prefix /home/pi/playbulb/snp00/
 
 #time zone
-rm /etc/localtime
-ls -s /usr/share/zoneinfo/Canada/Eastern /etc/localtime
+#rm /etc/localtime
+#ls -s /usr/share/zoneinfo/Canada/Eastern /etc/localtime
 
 #keyboard
+#cat  /etc/default/keyboard
 
-cat  /etc/default/keyboard
+echo "done - check with service are running maybe reboot"
+sudo systemctl status gitupdatersnp.service
+sudo systemctl status playbulb.service
+echo "try to start manual like "
+echo "cd ~/playbulb/snp00"
+cd ~/playbulb/snp00
+echo "sudo node pipbiotv2.js"
+
 
