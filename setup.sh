@@ -73,6 +73,7 @@ sudo systemctl status playbulb.service
 echo "try to start manual like "
 echo "cd ~/playbulb/snp00"
 cd ~/playbulb/snp00
+sudo date --set='TZ="America/New_York"
 echo "sudo node pipbiotv2.js"
 sudo node pipbiotv2.js
 
